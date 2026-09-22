@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="hu">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>home page</title>
+    <meta name="description" content="Személyes kezdőlap keresővel, időjárással és a nap ritmusával.">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23112833'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23f2c987'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="landscape" aria-hidden="true"></div>
+    <div class="shade" aria-hidden="true"></div>
+    <div class="shell">
+        <header><a class="brand" href="index.html"><span class="brand-icon">✳</span> home page<span
+                    class="brand-dot">.</span></a>
+            <div class="header-actions"><select id="language" aria-label="Nyelv / Language">
+                    <option value="hu">Magyar</option>
+                    <option value="en">English</option>
+                </select><button id="settings-open" class="quiet">⚙ <span>Testreszabás</span></button></div>
+        </header>
+        <main>
+            <section class="welcome">
+                <div class="date" id="date"></div>
+                <h1 id="clock">00:00:00</h1>
+                <p id="greeting">Szép napot!</p>
+                <form id="search" role="search"><span class="search-icon" aria-hidden="true">⌕</span><input id="query"
+                        type="search" aria-label="Keresés az interneten" placeholder="Merre induljunk ma?" required
+                        autocomplete="off"><button type="submit" aria-label="Keresés indítása">↗</button></form>
+                <div class="search-meta"><span id="engine-label">Keresés a Google-lel</span><span><kbd>/</kbd> a
+                        kereséshez</span></div>
+            </section>
+            <section class="favorites" aria-labelledby="favorites-title">
+                <div class="section-head">
+                    <h2 id="favorites-title">Egy kattintásra</h2>
+                </div>
+                <div id="links" class="links"></div>
+            </section>
+            <section class="widgets">
+                <article class="glass weather">
+                    <div class="section-head">
+                        <h2>Odakint</h2><button class="quiet" id="city-change">Hely megadása ↗</button>
+                    </div>
+                    <div class="weather-content"><span id="weather-icon" class="weather-icon">◌</span>
+                        <div>
+                            <div id="temperature" class="temperature">—°</div>
+                            <div id="condition">Időjárás betöltése…</div>
+                        </div>
+                    </div>
+                    <div class="weather-bottom"><span id="location">Budapest</span><span id="weather-detail"></span>
+                    </div><a class="credit" href="https://open-meteo.com/" target="_blank" rel="noopener">Időjárás:
+                        Open-Meteo</a>
+                </article>
+                <article class="glass wisdom">
+                    <div class="section-head">
+                        <h2>Egy mosoly mára</h2><span class="quote-mark">”</span>
+                    </div>
+                    <blockquote id="quote"></blockquote>
+                    <div class="quote-bottom"><span>Napi humor · 100 gondolat</span><span id="day-count"></span></div>
+                </article>
+            </section>
+            <section class="glass calendar-section" aria-labelledby="calendar-title">
+                <div class="section-head">
+                    <h2 id="calendar-title">Google Naptár</h2><a class="quiet" href="https://calendar.google.com"
+                        target="_blank" rel="noopener">Naptár megnyitása ↗</a>
+                </div>
+                <div id="calendar-content" class="calendar-content">
+                    <div class="embed-empty"><span aria-hidden="true">▦</span>
+                        <h3>A naptárad helye</h3>
+                        <p>Add meg a naptár linkjét a Testreszabás menüben.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="flight-section" aria-labelledby="flight-title">
+                <div class="section-head">
+                    <h2 id="flight-title">MyFlightRadar24</h2><a class="quiet" href="https://my.flightradar24.com"
+                        target="_blank" rel="noopener">Repüléseim ↗</a>
+                </div>
+                <div class="flight-banners">
+                    <div id="flight-banner-1" class="glass banner-slot">
+                        <div class="embed-empty"><span aria-hidden="true">✈</span>
+                            <h3>1. banner</h3>
+                            <p>Add meg a kép linkjét a Testreszabás menüben.</p>
+                        </div>
+                    </div>
+                    <div id="flight-banner-2" class="glass banner-slot">
+                        <div class="embed-empty"><span aria-hidden="true">✈</span>
+                            <h3>2. banner</h3>
+                            <p>Add meg a kép linkjét a Testreszabás menüben.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer><span id="phase-label">A nap ritmusában</span><span>Egy kis nyugalom. Egy új kezdet.</span><a
+                id="photo-credit"
+                href="https://unsplash.com/photos/a-mountain-lake-surrounded-by-snow-covered-mountains-XPVVtqCQWzY"
+                target="_blank" rel="noopener">Fotó: Mattia Poli · Unsplash ↗</a></footer>
+    </div>
+    <dialog id="settings">
+        <form id="preferences">
+            <div class="dialog-head">
+                <h2>A te kezdőlapod</h2><button type="button" class="close" data-close aria-label="Bezárás">×</button>
+            </div><label>Hogyan szólítsalak?<input id="name-input" maxlength="35"
+                    placeholder="Keresztneved"></label><label>Kereső<select id="engine">
+                    <option value="google">Google</option>
+                    <option value="duck">DuckDuckGo</option>
+                    <option value="bing">Bing</option>
+                </select></label><label>Háttér hangulata<select id="theme">
+                    <option value="auto">Automatikus · napszak szerint</option>
+                    <option value="morning">Reggel</option>
+                    <option value="day">Nappal</option>
+                    <option value="evening">Este</option>
+                    <option value="night">Éjszaka</option>
+                </select></label>
+            <fieldset class="embed-settings">
+                <legend>Naptár és bannerek</legend><label>Google Naptár linkje<input id="calendar-input" type="url"
+                        placeholder="https://calendar.google.com/calendar/embed?src=..."></label>
+                <p class="hint">A naptár beágyazási vagy nyilvános linkjét add meg. A megtekintéshez hozzáférés
+                    szükséges.</p><label>1. banner képlinkje<input id="banner-one-input" type="url"
+                        placeholder="https://..."></label><label>2. banner képlinkje<input id="banner-two-input"
+                        type="url" placeholder="https://..."></label>
+                <p class="hint">Közvetlen HTTPS-képlinkeket adj meg. Az üres mező eltávolítja a képet.</p>
+                <p id="settings-error" role="alert"></p>
+            </fieldset>
+            <p class="hint">A beállítások ebben a böngészőben maradnak.</p><button class="primary">Mentés</button>
+        </form>
+    </dialog>
+    <dialog id="city-dialog">
+        <form id="city-form">
+            <div class="dialog-head">
+                <h2>Hol nézzük az időt?</h2><button type="button" class="close" data-close
+                    aria-label="Bezárás">×</button>
+            </div><label>Település<input id="city-input" required minlength="2"
+                    placeholder="Például: Szeged"></label><button class="primary">Település keresése</button>
+            <p id="city-status" role="status"></p>
+            <div id="city-results"></div>
+        </form>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <script src="config.js"></script>
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
