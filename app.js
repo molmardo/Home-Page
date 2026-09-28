@@ -2,8 +2,9 @@
 
 const QUICK_LINKS = [
   ["Facebook", "https://www.facebook.com", "facebook.com", "f"],
-  ["Gmail", "https://mail.google.com", "mail.google.com", "M"],
+  ["Gmail", "https://mail.google.com/mail", "mail.google.com/mail", "M"],
   ["YouTube", "https://www.youtube.com", "youtube.com", "▶"],
+  ["LinkedIn", "https://www.linkedin.com", "linkedin.com", "in"],
   ["Google Drive", "https://drive.google.com", "drive.google.com", "△"],
   ["Google Maps", "https://maps.google.com", "maps.google.com", "↗"],
   ["Google Calendar", "https://calendar.google.com", "calendar.google.com", "31"],
@@ -12,17 +13,21 @@ const QUICK_LINKS = [
   ["W3Schools", "https://www.w3schools.com", "w3schools.com", "W³"],
   ["Netflix", "https://www.netflix.com", "netflix.com", "N"],
   ["ChatGPT", "https://chatgpt.com", "chatgpt.com", "✳"],
-  ["GitHub", "https://github.com", "github.com", "GH"],
   ["Gemini", "https://gemini.google.com", "gemini.google.com", "✦"],
+  ["GitHub", "https://github.com", "github.com", "GH"],
   ["OneDrive", "https://onedrive.live.com", "onedrive.live.com", "☁"],
   ["iCloud", "https://www.icloud.com", "icloud.com", "☁"],
   ["Chrono24", "https://www.chrono24.com", "chrono24.com", "◷"],
-  ["LinkedIn", "https://www.linkedin.com", "linkedin.com", "in"],
   ["Telex.hu", "https://telex.hu", "telex.hu", "tx"],
+  ["4!", "https://telex.hu", "444.hu", "444"],
+  ["HVG", "https://hvg.hu", "hvg.hu", "HVG"],
   ["Twitch.tv", "https://www.twitch.tv", "twitch.tv", "T"],
   ["Google.com", "https://www.google.com", "google.com", "G"],
   ["Flightradar24", "https://www.flightradar24.com", "flightradar24.com", "✈"],
-  ["MyFlightRadar24", "https://my.flightradar24.com", "my.flightradar24.com", "✈"]
+  ["MyFlightRadar24", "https://my.flightradar24.com", "my.flightradar24.com", "✈"],
+  ["Alpaca Market", "https://app.alpaca.markets/account/login", "app.alpaca.markets/account/login", "A"],
+  ["Lightyear", "https://lightyear.com/hu-hu/login", "lightyear.com/", "L"],
+  ["ScrambleUp", "https://investor.scrambleup.com", "scrambleup.com", "S"],
 ];
 
 const $ = id => document.getElementById(id);
